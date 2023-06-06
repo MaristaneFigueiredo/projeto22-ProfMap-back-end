@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6", //Define a versão do ECMAScript para a qual o código TypeScript será compilado. Neste exemplo, o código será compilado para o ECMAScript 6
+    "outDir": "dist", // arquivo js ficarão nesta pasta
+    "esModuleInterop": true, // entender sistemas diferentes de importação que existe no js. Qdo é “true” garantimos compatibilidade entre várias libs
+    "module": "es6", //especificar o padrão do module. Definirá o formato de módulo que será usado pelo compilador TypeScript ao gerar o código JavaScript. Esse formato escolhido é baseado nos módulos do ECMAScript 2015 (também conhecido como ECMAScript 6 ou ES6). Ele utiliza as palavras-chave import e export para importar e exportar funcionalidades entre os módulos
+    "moduleResolution": "node" //usa regras similares ao carregador de módulo do Node.js
+    //"baseUrl": ".", // estou que a raiz base da minha aplicação é o "profmap-back-end"
+  },
+  "ts-node": {
+    "esm": true
+  }
+}
