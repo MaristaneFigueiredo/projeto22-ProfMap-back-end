@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model sessions {
+  id        Int       @id(map: "sessions_pk") @default(autoincrement())
+  token     String    @unique
+  user_id   Int
+  createdAt DateTime  @db.Timestamp(6)
+  updatedAt DateTime? @db.Timestamp(6)
+  users     users     @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sessions_fk0")
+}
+
+model teachers {
+  id                 Int                  @id(map: "teachers_pk") @default(autoincrement())
+  name               String
+  cpf                String               @unique @db.VarChar
+  rg                 String
+  birth_date         DateTime             @db.Date
+  nationality        String
+  cell               String               @db.VarChar
+  address            String
+  number             Int
+  complement         String
+  district           String
+  city               String
+  state              String               @db.VarChar
+  zip_code           String
+  email              String               @unique
+  observation        String?              @db.VarChar
+  createdAt          DateTime             @db.Timestamp(6)
+  updatedAt          DateTime?            @db.Timestamp(6)
+  teachers_workplace teachers_workplace[]
+}
+
+model teachers_workplace {
+  id           Int        @id(map: "teachers_workplace_pk") @default(autoincrement())
+  teacher_id   Int
+  workplace_id Int
+  createdAt    DateTime   @db.Timestamp(6)
+  updatedAt    DateTime   @db.Timestamp(6)
+  teachers     teachers   @relation(fields: [teacher_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "teachers_workplace_fk0")
+  workplaces   workplaces @relation(fields: [workplace_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "teachers_workplace_fk1")
+}
+
+model users {
+  id        Int        @id(map: "users_pk") @default(autoincrement())
+  name      String
+  email     String     @unique
+  password  String
+  createdAt DateTime   @db.Timestamp(6)
+  updatedAt DateTime?  @db.Timestamp(6)
+  sessions  sessions[]
+}
+
+model workplaces {
+  id                 Int                  @id(map: "workplace_pk") @default(autoincrement())
+  name               String
+  address            String
+  number             Int
+  complement         String
+  district           String
+  city               String
+  state              String               @db.VarChar
+  zip_code           String
+  latitude           Float
+  longitude          Float
+  email              String?              @unique
+  observation        String?
+  createdAt          DateTime             @db.Timestamp(6)
+  updatedAt          DateTime?            @db.Timestamp(6)
+  teachers_workplace teachers_workplace[]
+}
