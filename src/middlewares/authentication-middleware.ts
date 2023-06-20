@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-//import { unauthorizedError } from "@/errors/unauthorizedError";
-import { unauthorizedError } from '../errors';
+import { unauthorizedError } from '@/errors/unauthorizedError';
 import sessionsService from '@/services/sessions-service';
 import * as jwt from 'jsonwebtoken';
 

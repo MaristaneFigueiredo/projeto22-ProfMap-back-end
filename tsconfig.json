@@ -4,7 +4,8 @@
     "module": "es6", //especificar o padrão do module. Definirá o formato de módulo que será usado pelo compilador TypeScript ao gerar o código JavaScript. Esse formato escolhido é baseado nos módulos do ECMAScript 2015 (também conhecido como ECMAScript 6 ou ES6). Ele utiliza as palavras-chave import e export para importar e exportar funcionalidades entre os módulos
     "esModuleInterop": true, //permiti interoperabilidade com outras bibliotecas
     "moduleResolution": "node", //habilita a resolução de Módulos usando a estratégia do Node.js
-    "baseUrl": ".", //  base para as importações relativas/ neste caso a raiz base da minha aplicação é o "profmap-back-end"
+    //"baseUrl": ".", //  base para as importações relativas/ neste caso a raiz base da minha aplicação é o "profmap-back-end"
+    "baseUrl": "src",
     "paths": {
       // "*": ["*", "*.ts", "*.json"]
       "@/*": ["*", "*.ts", "*.json"]

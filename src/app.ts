@@ -4,16 +4,11 @@ import cors from 'cors';
 const app = express(); //Essa constante app representa o meu aplicativo Express e é usada para definir as rotas, configurar middlewares, iniciar o servidor e muito mais. Uma nova instância de um aplicativo significa criar um objeto único que representa um aplicativo específico.
 app.use(json());
 app.use(cors());
-//import { usersRoutes } from '@/routes';
-//import { handleApplicationErrors } from '@/middlewares';
-import { usersRoutes } from './routes';
-import { handleApplicationErrors } from './middlewares';
-import { loadEnv } from './config/envs';
-import { connectDb, disconnectDb } from './config/database';
+import { usersRoutes } from '@/routes';
+import { handleApplicationErrors } from '@/middlewares';
 
-// app.get('/exemplo', (req: Request, res: Response) => {
-//   res.send('Funcionando cors again!');
-// });
+import { loadEnv } from './config/envs';
+import { connectDb, disconnectDb } from '@/config/database';
 
 app.use('/users', usersRoutes);
 
