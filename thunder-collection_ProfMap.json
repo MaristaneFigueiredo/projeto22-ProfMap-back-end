@@ -1,0 +1,80 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ProfMap",
+    "dateExported": "2023-06-04T16:25:03.599Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "325cf2ce-63bc-4d36-aca1-62157f222ca9",
+            "colId": "4e340e59-eb0b-4637-84b1-6d14436a689e",
+            "containerId": "",
+            "name": "/health",
+            "url": "http://localhost:4000/health",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-03T03:12:08.484Z",
+            "modified": "2023-06-03T03:13:29.563Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7bd431a8-1022-49dd-bf17-babef518a9e4",
+            "colId": "4e340e59-eb0b-4637-84b1-6d14436a689e",
+            "containerId": "",
+            "name": "/users/sign-up",
+            "url": "http://localhost:4000/users/sign-up",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-03T18:30:44.803Z",
+            "modified": "2023-06-04T02:15:15.349Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"teste4\",\n  \"email\": \"teste4@teste.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "014c902b-4eb9-48da-b8ef-3a419be47e39",
+            "colId": "4e340e59-eb0b-4637-84b1-6d14436a689e",
+            "containerId": "",
+            "name": "/users/sign-in",
+            "url": "http://localhost:4000/users/sign-in",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-03T21:35:34.023Z",
+            "modified": "2023-06-04T16:01:14.143Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"Heaven69@gmail.com\",\n  \"password\": \"tsjfc4y5sH9shv0\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7b4aeb50-55b6-464e-81bc-cfea901339a3",
+            "colId": "4e340e59-eb0b-4637-84b1-6d14436a689e",
+            "containerId": "",
+            "name": "/users/sign-out",
+            "url": "http://localhost:4000/users/sign-out",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-06-03T22:09:50.591Z",
+            "modified": "2023-06-03T22:27:28.809Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6InRlc3RlMiIsImVtYWlsIjoidGVzdGUyQHRlc3RlLmNvbSIsImlhdCI6MTY4NTgzMTIzM30.B2sfmDqiGiX6hYXG19M0_zaabQuANSW7Z7TAg-SgD50"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
