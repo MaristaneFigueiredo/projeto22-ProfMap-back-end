@@ -14,8 +14,9 @@ async function createUser({
   email,
   password,
 }: CreateUserParams): Promise<users> {
-  await verifyIsEmailUnique(email);
+  //console.log('env =', process.env.DATABASE_URL);
 
+  await verifyIsEmailUnique(email);
   const hashedPassword = await bcrypt.hash(password, 12);
 
   return await usersRepository.createUser({

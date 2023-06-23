@@ -13,6 +13,7 @@ async function createUser(data: CreateUserParams) {
 }
 
 async function findUserByEmail(email: string) {
+  console.log('email', email);
   return prisma.users.findFirst({
     where: {
       email,

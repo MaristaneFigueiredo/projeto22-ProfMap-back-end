@@ -6,6 +6,8 @@ import { loadEnv } from './config/envs';
 import { connectDb, disconnectDb } from '@/config/database';
 import httpStatus from 'http-status';
 
+loadEnv();
+
 const app = express(); //Essa constante app representa o meu aplicativo Express e é usada para definir as rotas, configurar middlewares, iniciar o servidor e muito mais. Uma nova instância de um aplicativo significa criar um objeto único que representa um aplicativo específico.
 app.use(json());
 app.use(cors());
