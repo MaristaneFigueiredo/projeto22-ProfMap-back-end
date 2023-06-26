@@ -1,6 +1,11 @@
 import express, { json, Request, Response, Express } from 'express';
 import cors from 'cors';
-import { usersRoutes, teachersRoutes } from '@/routes';
+import {
+  usersRoutes,
+  teachersRoutes,
+  workplacesRoutes,
+  teachersWorkplaces,
+} from '@/routes';
 import { handleApplicationErrors } from '@/middlewares';
 import { loadEnv } from './config/envs';
 import { connectDb, disconnectDb } from '@/config/database';
@@ -17,6 +22,8 @@ app.get('/health', (request: Request, response: Response) =>
 );
 app.use('/users', usersRoutes);
 app.use('/teachers', teachersRoutes);
+app.use('/workplaces', workplacesRoutes);
+app.use('/teachers-workplaces', teachersWorkplaces);
 
 app.use(handleApplicationErrors);
 
