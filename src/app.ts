@@ -1,6 +1,6 @@
 import express, { json, Request, Response, Express } from 'express';
 import cors from 'cors';
-import { usersRoutes } from '@/routes';
+import { usersRoutes, teachersRoutes } from '@/routes';
 import { handleApplicationErrors } from '@/middlewares';
 import { loadEnv } from './config/envs';
 import { connectDb, disconnectDb } from '@/config/database';
@@ -16,6 +16,7 @@ app.get('/health', (request: Request, response: Response) =>
   response.sendStatus(httpStatus.OK)
 );
 app.use('/users', usersRoutes);
+app.use('/teachers', teachersRoutes);
 
 app.use(handleApplicationErrors);
 
